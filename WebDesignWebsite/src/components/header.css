@@ -1,0 +1,21 @@
+
+
+header { 
+    position: fixed;
+    height: 120px;
+    width: 100vw;
+    background-color: rgb(168, 204, 178);
+    display: flex;
+
+    top: 0px;
+    left: 0px;
+}
+
+
+.main-title {
+    font-family: "museo";
+    font-size: 2.5rem;
+    font-weight: bold; 
+    position: relative;
+}
+
