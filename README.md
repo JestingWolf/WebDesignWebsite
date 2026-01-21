@@ -1,1 +1,3 @@
 # WebDesignWebsite
+
+npm create vite@latest my-app
