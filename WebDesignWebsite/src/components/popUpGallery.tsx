@@ -7,7 +7,7 @@ const imageNumber = 3;
 let imagePaths: string[] = [];
 
 for (let i = 1; i <= imageNumber; i++) {
-    imagePaths.push(`/pop-up-gallery-images/image${i}.jpg`)
+    imagePaths.push(`/assets/pop-up-gallery-images/image${i}.jpg`)
 }
 
 export default function PopUpGallery() {
@@ -57,6 +57,7 @@ export default function PopUpGallery() {
                     <BottomRowNavButton
                         key={index}
                         index={index}
+                        isActive={index === activeImageIndex}
                         onClick={onButtonClick}
                     />
                 )
@@ -82,10 +83,11 @@ It would be nice if it could not do the automatic scrolling whilst the mouse is 
 
 interface BottomRowNavButtonProps {
     index: number;
+    isActive: boolean;
     onClick: (index: number) => void;
 }
 
-function BottomRowNavButton({ index, onClick }: BottomRowNavButtonProps) {
+function BottomRowNavButton({ index, isActive, onClick }: BottomRowNavButtonProps) {
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault(); // Optional
@@ -94,7 +96,7 @@ function BottomRowNavButton({ index, onClick }: BottomRowNavButtonProps) {
 
     return(
         <button
-            className="quick-nav-button"
+            className={`quick-nav-button ${isActive ? 'is-active' : ''}`}
             id={`quick-nav-button-${index}`}
             onClick={handleClick}
         >

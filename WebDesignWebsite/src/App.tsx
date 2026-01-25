@@ -16,11 +16,12 @@ function App() {
     <>
       <BrowserRouter>
         <nav>
+
+        </nav>          
           <Link to="/" className = "indexButton">Home</Link>
           <Link to="/contact" className = "contactButton">Contact</Link>
           <Link to="/catalogue" className = "catalogueButton">Catalogue</Link>
           <Link to="/pricing" className = "pricingButton">Pricing</Link>
-        </nav>
 
         <Routes>
           <Route path="/" element={<Index />} />
@@ -53,7 +54,7 @@ function Index() {
 function Contact() {
   return (
     <>
-      <Header/>
+      <Header />
 
       <ContactForm/>
 

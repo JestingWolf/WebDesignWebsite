@@ -21,7 +21,7 @@ export default function Header() {
     const currentColour = headerColour[location.pathname] || headerColour["/"];
     return(
         <header style = {{ 
-         backgroundImage: `url(/src/assets/${currentBackground})`,
+         backgroundImage: `url(/assets/backgrounds/${currentBackground})`,
          backgroundColor: `${currentColour}`
          }}>
         </header>
