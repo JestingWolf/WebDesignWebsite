@@ -7,14 +7,14 @@ export default function Header() {
 
     const headerImages: Record<string, string> = {
         "/": "header-background-index.PNG",
-        "/contact": "header-image-contact.jpg",
+        "/contact": "header-background-contact.PNG",
         "/catalogue": "header-image-catalogue.jpg"
     }
 
     const headerColour: Record<string, string> = {
         "/": "#a8ccb2",
         "/contact": "#709BD9",
-        "/catalogue": "#D15E5E"
+        "/catalogue": "#e44f4f"
     }
     
     const currentBackground = headerImages[location.pathname] || headerImages["/"]; 

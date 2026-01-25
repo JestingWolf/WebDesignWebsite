@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import "./popUpGallery.css";
 
 // Hard coded to avoid pain
 const imageNumber = 3;
@@ -13,10 +14,12 @@ export default function PopUpGallery() {
 
     if (!imagePaths) { return }
 
+    const [activeImageIndex, setActiveImageIndex] = useState<number>(0)
     const [activeImageSrc, setActiveImageSrc] = useState<string>(imagePaths[0]);
     const [animationState, setAnimationState] = useState(undefined);
 
-    const onNavButtonClick = (index: number) => {
+    const onButtonClick = (index: number) => {
+        setActiveImageIndex(index);
         setActiveImageSrc(imagePaths[index]);
     }
 
@@ -28,21 +31,37 @@ export default function PopUpGallery() {
             variants={animationState}
         >
 
-        <img
-            className="pop-up-main-image"
-            src={activeImageSrc}
-        />
+        <div className="middle-row">
+            {(activeImageIndex !== 0) && <button
+                id="left-nav-button"
+                className="nav-button"
+                onClick={() => onButtonClick(activeImageIndex - 1)}
+            ></button>}
 
-        {imagePaths.map((imageSrc, index) => {
+            <img
+                className="pop-up-main-image"
+                src={activeImageSrc}
+            />
 
-            return(
-                <BottomRowNavButton
-                    key={index}
-                    index={index}
-                    onClick={onNavButtonClick}
-                />
-            )
-        })}
+            {(activeImageIndex !== (imageNumber-1)) && <button
+                id="right-nav-button"
+                className="nav-button"
+                onClick={() => onButtonClick(activeImageIndex + 1)}
+            ></button>}
+        </div>
+
+        <div className="bottom-row">
+            {imagePaths.map((imageSrc, index) => {
+
+                return(
+                    <BottomRowNavButton
+                        key={index}
+                        index={index}
+                        onClick={onButtonClick}
+                    />
+                )
+            })}
+        </div>
             
         </motion.div>
     )
