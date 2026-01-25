@@ -81,8 +81,104 @@
   display: block;
 }
 
-#phone-input {
-  margin-bottom: 1.75rem; /* Spacing after phone */
+
+
+
+
+#phone-number-label {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Phone input row - NO CONTAINER BOX */
+.phone-number-input {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+/* Country code selector - NO BOX */
+.country-code-select {
+  padding: 1rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #f9fafb;
+  font-size: 1rem;
+  width: 100px; /* Fixed width */
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Phone number input - NO BOX, just part of the row */
+.phone-number-input input {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: all 0.2s;
+}
+
+/* Focus states */
+.country-code-select:focus,
+.phone-number-input input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Error message for phone */
+.phone-number-input + span {
+  display: block;
+  margin-top: 0.375rem;
+  font-size: 0.875rem;
+  color: #dc2626;
+}
+
+/* Card-style radio buttons in a row */
+.preferred-contact-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact-options-label {
+  grid-column: 1 / -1;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* EASY STYLING - JUST 2 LINES */
+.contact-option input[type="radio"] {
+  accent-color: #3b82f6; /* Color of the dot */
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.contact-option input[type="radio"]:checked + .contact-label {
+  color: #3b82f6; /* Color of the label */
+  font-weight: 500;
+}
+
+.contact-label {
+  font-size: 1rem;
+  color: #374151;
+  cursor: pointer;
 }
 
 /* Submit button */
