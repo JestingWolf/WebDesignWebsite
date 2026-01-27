@@ -1,4 +1,4 @@
-[
+export const countryCodes = [
   {"code":"1","country":"United States / Canada","flag":"🇺🇸🇨🇦"},
   {"code":"7","country":"Russia / Kazakhstan","flag":"🇷🇺🇰🇿"},
   {"code":"20","country":"Egypt","flag":"🇪🇬"},

@@ -29,6 +29,8 @@ export default function ContactForm() {
         console.log(data.message);
     }
 
+    const [countryCode, setCountryCode] = useState('+44');
+
     return(
         <div className="form-container">
             <form id="contact-form" onSubmit={handleSubmit(onSubmit)}>
@@ -72,6 +74,12 @@ export default function ContactForm() {
 
 
                 <label htmlFor="phone-number-input" id="phone-number-label" className="form-label">Phone Number</label>
+                
+                <CountryCodeSelector
+                    value={countryCode}
+                    onChange={(newCode: string) => setCountryCode(newCode)}
+                />
+
                 <input
                     type="tel"  // Mobile keyboards show number pad
                     id="phone-input"
@@ -107,5 +115,24 @@ export default function ContactForm() {
                 </button>
             </form>
         </div>
+    )
+}
+
+interface CountryCodeSelectorProps {
+    value: string;
+    onChange: (newCode: string) => void;
+}
+
+// todo: move to a place in utils
+function CountryCodeSelector({
+    value,
+    onChange
+}: CountryCodeSelectorProps) {
+
+    return(
+        <select
+        
+        >
+        </select>
     )
 }
