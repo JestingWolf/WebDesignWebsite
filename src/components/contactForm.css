@@ -1,0 +1,236 @@
+.form-container {
+  max-width: 625px;
+  margin: 0 auto;
+  padding: 3.125rem 5.375rem 3.125rem 3.125rem;
+  background: white;
+  border-radius: 30px;
+  border: 3.75px solid #c29a7a;
+  box-shadow: 10px 10px 0 #726d6a;
+  position: relative;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAME ROW - Horizontal layout */
+.name-row {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 2.1875rem;
+}
+
+.name-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form labels */
+.form-label {
+  display: block;
+  margin-bottom: 0.625rem;
+  font-size: 1.09375rem;
+  font-weight: 500;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.0625em;
+}
+
+/* Form inputs */
+.form-input {
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  background: #f9fafb;
+  border: 1.25px solid #e5e7eb;
+  border-radius: 7.5px;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 3.75px rgba(59, 130, 246, 0.1);
+}
+
+/* Email field */
+#email-label {
+  margin-bottom: 0.625rem;
+  display: block;
+  margin-top: 0;
+}
+
+#email-input {
+  margin-bottom: 2.1875rem;
+}
+
+/* Phone field */
+#phone-number-label {
+  margin-bottom: 0.625rem;
+  display: block;
+}
+
+/* Phone input row - NO CONTAINER BOX */
+.phone-number-input {
+  display: flex;
+  gap: 0.625rem;
+  width: 100%;
+}
+
+/* Country code selector - NO BOX */
+.country-code-select {
+  padding: 1.25rem 0.9375rem;
+  border: 1.25px solid #e5e7eb;
+  border-radius: 7.5px;
+  background: #f9fafb;
+  font-size: 1.25rem;
+  width: 125px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Phone number input - NO BOX, just part of the row */
+.phone-number-input input {
+  flex: 1;
+  padding: 1.25rem;
+  border: 1.25px solid #e5e7eb;
+  border-radius: 7.5px;
+  font-size: 1.25rem;
+  background: #f9fafb;
+  transition: all 0.2s;
+}
+
+/* Focus states */
+.country-code-select:focus,
+.phone-number-input input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 3.75px rgba(59, 130, 246, 0.1);
+}
+
+/* Error message for phone */
+.phone-number-input + span {
+  display: block;
+  margin-top: 0.46875rem;
+  font-size: 1.09375rem;
+  color: #dc2626;
+}
+
+/* Card-style radio buttons in a row */
+.preferred-contact-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.1875rem;
+}
+
+.contact-options-label {
+  grid-column: 1 / -1;
+  margin-bottom: 0.625rem;
+  font-size: 1.09375rem;
+  font-weight: 500;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.0625em;
+}
+
+.contact-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+
+/* EASY STYLING - JUST 2 LINES */
+.contact-option input[type="radio"] {
+  accent-color: #3b82f6;
+  width: 22.5px;
+  height: 22.5px;
+  cursor: pointer;
+}
+
+.contact-option input[type="radio"]:checked + .contact-label {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.contact-label {
+  font-size: 1.25rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+/* Submit button */
+.submit-btn {
+  margin-top: 0.625rem;
+  padding: 1.09375rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: white;
+  background: #111827;
+  border: none;
+  border-radius: 7.5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #1f2937;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error messages */
+#contact-form span {
+  display: block;
+  margin-top: 0.46875rem;
+  font-size: 1.09375rem;
+  color: #dc2626;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  background: #f9fafb;
+  border: 1.25px solid #e5e7eb;
+  border-radius: 7.5px;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 125px;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 3.75px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .form-container {
+    padding: 2.5rem;
+    margin: 0 1.25rem;
+  }
+
+  .name-row {
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .name-row > div {
+    margin-bottom: 1.25rem;
+  }
+}

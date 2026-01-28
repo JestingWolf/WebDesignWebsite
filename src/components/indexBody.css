@@ -1,0 +1,8 @@
+.index-body {
+    display: flex;
+    padding-top: 120px;
+}
+
+.website-description {
+    position: relative;
+}
